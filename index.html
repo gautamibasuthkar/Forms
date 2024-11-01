@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizza Registration Form</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Register for Free Pizza!</h1>
+    <form id="pizzaForm">
+        <div>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required minlength="3" pattern="[A-Za-z\s]+" title="Only alphabets are allowed.">
+            <span class="error" id="nameError"></span>
+        </div>
+        
+        
+        <div>
+            <label for="birthYear">Year of Birth:</label>
+            <input type="number" id="birthYear" name="birthYear" min="1901" max="2024" required>
+            <span class="error" id="birthYearError"></span>
+        </div>
+
+        <div>
+            <label for="usResident">Do you live in the United States?</label>
+            <select id="usResident" name="usResident" required>
+                <option value="">Select an option</option>
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+            </select>
+            <span class="error" id="usResidentError"></span>
+        </div>
+        
+        <div id="zipcodeField" style="display: none;">
+            <label for="zipcode">Zipcode:</label>
+            <input type="text" id="zipcode" name="zipcode" pattern="\d{5}" title="Please enter a 5-digit ZIP code.">
+            <span class="error" id="zipcodeError"></span>
+        </div>
+          
+
+        <div>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required minlength="8">
+            <span class="error" id="passwordError"></span>
+        </div>
+
+        <div>
+            <label for="topping">Choose a favorite topping:</label>
+            <select id="topping" name="topping" required>
+                <option value="">Select a topping</option>
+                <option value="pineapple">With Pineapple</option>
+                <option value="noPineapple">Without Pineapple</option>
+                <option value="noPizza">I do not like Pizza</option>
+            </select>
+            <span class="error" id="toppingError"></span>
+        </div>
+
+        <button type="submit">Submit</button>
+    </form>
+    <p id="formResult"></p>
+
+    <script src="script.js"></script>
+</body>
+</html>
